@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/usr/local/var/postgres'
+let g:netrw_dirhist_9='/Users/prose/carbon/modules/krayt/base'
+let g:netrw_dirhist_8='/Users/prose/carbon/modules/krayt'
+let g:netrw_dirhist_7='/Users/prose/carbon/envsdev/krayt/kraytd/docker'
+let g:netrw_dirhist_6='/Users/prose/carbon/envsdev/krayt/kraytd'
+let g:netrw_dirhist_5='/Users/prose/carbon/envsdev/krayt'
+let g:netrw_dirhist_4='/Users/prose/.oh-my-zsh/plugins'
+let g:netrw_dirhist_3='/Users/prose/sdk/caliper-api'
+let g:netrw_dirhist_2='/Users/prose/sdk/caliper-api/endpoints'
+let g:netrw_dirhist_1='/Users/prose/sdk/caliper-api'
