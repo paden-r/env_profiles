@@ -3,34 +3,15 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/prose/.oh-my-zsh"
+export ZSH="/home/prose/.oh-my-zsh"
 export EDITOR=vim
 export VISUAL=vim
 alias weather='curl wttr.in'
-alias jumpbox='ssh jumpbox'
 alias activate='source .env/bin/activate'
-alias cd..="cd .."
 alias col="column -ts $'\t'"
-alias share="ssh share"
-alias nomadsdk="export NOMAD_ADDR=http://dev-01-nomad.q2developer.com:4646;nomad"
-alias nomaddev="export NOMAD_ADDR=http://10.115.4.30:4646;nomad"
-alias git_clean="git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done"
 # Setting PATH for Python 3.6
-PATH="/Library/Frameworks/Python.framework/Versions/3.6.bin:${PATH}"
-export PATH
-export PATH=$PATH:/Users/prose/nomad
-export NOMAD_ADDR=http://10.115.4.30:4646
 export HISTCONTROL="ignoreboth"
-export SSL_CERT_FILE=/etc/ssl/keychain-certs.pem
-export REQUESTS_CA_BUNDLE=/etc/ssl/keychain-certs.pem
-export VAULT_ADDR='http://vault.service.q2consul-corp:8200'
-export AWS_REGION="us-west-2"
-export HOMEBREW_NO_AUTO_UPDATE=1
-export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 export LDFLAGS="-L/usr/local/opt/libffi/lib"
-export Q2SDK_ARDENTFS_URL="http://fabio-online-lb-ui.query.q2consul-corp/ardentfs/ci/ardent"
-export SHARED_DEV_LOGIN_NAME="paden.rose@q2ebanking.com"
-export NOMAD_SECRETS_DIR="/Users/prose/sdk/nomad_secret"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -123,8 +104,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="/usr/local/opt/python@3.8/bin:$PATH"
-export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
-alias sublime='subl'
-export SSL_CERT_FILE=/etc/ssl/keychain-certs.pem
-export REQUESTS_CA_BUNDLE=/etc/ssl/keychain-certs.pem
