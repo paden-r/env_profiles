@@ -1,3 +1,0 @@
-Setup file type settings for Python, JS, Jinja, SQL
-Setup Jedi or something for Python, JS, and SQL
-Find plug in for jumping into a file from a code reference (command b on pycharm)
