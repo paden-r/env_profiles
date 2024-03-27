@@ -5,5 +5,16 @@
   "python.linting.ruffEnabled": true,
   "python.linting.ruffArgs": ["--line-length=150", "--preview"],
   "rust-analyzer.check.command": "clippy",
-  "coc.preferences.extensionUpdateCheck": "daily"
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "sql.formatOptions": {
+    "language": "tsql",
+    "tabWidth": 4,
+    "keywordCase": "upper",
+    "dataTypeCase": "upper",
+    "functionCase": "upper",
+    "logicalOperatorNewline": true,
+    "expressionWidth": 30,
+    "denseOperators": true
+  },
+  "svelte.enable-ts-plugin": false
 }

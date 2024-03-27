@@ -85,4 +85,12 @@ return {
 
     -- Git
     'tpope/vim-fugitive',
+    -- Comment lines
+    {
+        'numToStr/Comment.nvim',
+        opts = {
+            -- add any options here
+        },
+        lazy = false,
+    },
 }

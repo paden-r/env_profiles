@@ -35,8 +35,17 @@ vim.g.coc_global_extensions={
     'coc-markdownlint',
     'coc-pydocstring',
     'coc-sqlfluff',
+    'coc-svelte',
+    'coc-yaml',
+    'coc-toml',
+    'coc-docker',
+    'coc-sql',
+    'coc-angular',
+    'coc-xml',
+    'coc-csharp-ls',
 }
-
+vim.opt.spelllang = 'en_us'
+vim.opt.spell = true
 vim.cmd([[
     " Add search to quickfix list
     function! s:build_quickfix_list(lines)
@@ -87,4 +96,5 @@ vim.cmd([[
                                   \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 ]])
-
+--Comment plugin
+require('Comment').setup()
