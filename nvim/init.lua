@@ -97,4 +97,5 @@ vim.cmd([[
 
 ]])
 --Comment plugin
+vim.g.vim_json_conceal=0
 require('Comment').setup()

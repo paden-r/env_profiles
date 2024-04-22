@@ -16,5 +16,12 @@
     "expressionWidth": 30,
     "denseOperators": true
   },
-  "svelte.enable-ts-plugin": false
+  "svelte.enable-ts-plugin": false,
+  "languageserver": {
+      "csharp-ls": {
+          "command": "csharp-ls",
+          "filetypes": ["cs"],
+          "rootPatterns": ["*.csproj", ".vim/", ".git/", ".ht/"]
+      }
+  }
 }

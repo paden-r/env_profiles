@@ -27,10 +27,10 @@ return {
     'tpope/vim-surround',    -- surround text objects with like symbols
     'tpope/vim-commentary',  -- comment blocks of code intelligently
     'tpope/vim-repeat',      -- Use . key on things like commentary and surround
-    'Yggdroot/indentLine',   -- Visualize indentation level
     'tpope/vim-speeddating', -- Improve C-A and C-X for dates
     'SirVer/ultisnips',      -- Code Snippets
     "preservim/tagbar",      -- Classes/functions/enums in sidebar
+    'Yggdroot/indentLine',   -- Visualize indentation level
 
     -- File Viewing
     {
