@@ -42,7 +42,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
 alias weather='curl wttr.in'
 alias activate='source .env/bin/activate'
 alias git_prune="git fetch -p ; git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d"
@@ -52,7 +51,7 @@ alias ls="exa"
 alias find="fd"
 alias zj="zellij --layout /Users/prose/zellij-layouts/default.kdl --config ~/.config/zellij/config.kdl"
 alias zv="zellij --layout /Users/prose/zellij-layouts/vertical.kdl --config ~/.config/zellij/config.kdl"
-
+alias grep="rg"
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
