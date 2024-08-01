@@ -12,7 +12,7 @@ return {
     {
         'itchyny/lightline.vim', -- Statusline config
         config = function()
-            require("lightline").setup()
+            require("configs/lightline")
         end,
     },
     -- Editing help
@@ -20,50 +20,31 @@ return {
         'ntpeters/vim-better-whitespace', -- Visualize trailing whitespace
 
         config = function()
-            require("better-whitespace").setup()
+            require("configs/better_whitespace")
         end,
     },
     'tpope/vim-unimpaired',  -- Complementary mapping hotkeys
     'tpope/vim-surround',    -- surround text objects with like symbols
     'tpope/vim-commentary',  -- comment blocks of code intelligently
     'tpope/vim-repeat',      -- Use . key on things like commentary and surround
-    'tpope/vim-speeddating', -- Improve C-A and C-X for dates
-    'SirVer/ultisnips',      -- Code Snippets
-    "preservim/tagbar",      -- Classes/functions/enums in sidebar
     'Yggdroot/indentLine',   -- Visualize indentation level
+    'tpope/vim-speeddating', -- Improve C-A and C-X for dates
+
+    "preservim/tagbar",      -- Classes/functions/enums in sidebar
 
     -- File Viewing
     {
         "nvim-treesitter/nvim-treesitter", -- Syntax highlighting/folding/indentation
         build = ":TSUpdate",
         config = function()
-            local configs = require("nvim-treesitter.configs")
-
-            configs.setup({
-                ensure_installed = { "bash", "hcl", "html", "javascript", "lua", "python", "rust", "vim", "vimdoc", "sql", "regex" },
-                sync_install = false,
-                highlight = { enable = true },
-                indent = { enable = true },
-            })
+            require("configs/treesitter")
         end
     },
     {
         'stevearc/oil.nvim',
         config = function()
-            require("oil_overrides")
+            require("configs/oil")
         end
-    },
-    -- Database
-    {
-        "tpope/vim-dadbod",
-        dependencies = {
-            "kristijanhusak/vim-dadbod-ui",
-            "kristijanhusak/vim-dadbod-completion",
-        },
-        config = function()
-            require("dadbod").setup()
-        end,
-        cmd = { "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUILastQueryInfo" },
     },
     {
         'nvim-telescope/telescope.nvim',
@@ -81,16 +62,63 @@ return {
     'lepture/vim-jinja',
 
     -- Completion
-    { 'neoclide/coc.nvim', branch = 'release' },
+    {
+        "williamboman/mason.nvim",
+        config = function()
+            require("mason").setup()
+        end,
+    },
+    {'folke/neodev.nvim', opts = {}},
+    {
+        'neovim/nvim-lspconfig',
+        config = function()
+            require("configs/lspconfig")
+        end
+    },
+    {
+        'nvimdev/lspsaga.nvim',
+        config = function()
+            require("configs/lspsaga")
+        end
+    },
+    {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            "hrsh7th/cmp-buffer", -- source for text in buffer
+            "hrsh7th/cmp-path", -- source for file system paths in commands
+            "hrsh7th/cmp-cmdline", -- source for vim commands
+            "hrsh7th/cmp-nvim-lsp", -- source for lsp
+            'SirVer/ultisnips',      -- Code Snippets
+            "quangnguyen30192/cmp-nvim-ultisnips", -- For snippet autocompletion
+            "onsails/lspkind.nvim", -- vs-code like pictograms
+        },
+        config = function()
+            require("configs/cmp")
+        end,
+    },
+    -- { 'neoclide/coc.nvim', branch = 'release' },
 
     -- Git
     'tpope/vim-fugitive',
     -- Comment lines
     {
         'numToStr/Comment.nvim',
-        opts = {
-            -- add any options here
-        },
+        opts = {},
         lazy = false,
     },
+
+    -- AI completion
+    -- {
+    --   'git@gitlab.com:gitlab-org/editor-extensions/gitlab.vim.git',
+    --   event = { 'BufReadPre', 'BufNewFile' }, -- Activate when a file is created/opened
+    --   ft = { 'go', 'javascript', 'python', 'ruby' }, -- Activate when a supported filetype is open
+    --   cond = function()
+    --     return vim.env.GITLAB_TOKEN ~= nil and vim.env.GITLAB_TOKEN ~= '' -- Only activate if token is present in environment variable (remove to use interactive workflow)
+    --   end,
+    --   opts = {
+    --     statusline = {
+    --       enabled = true, -- Hook into the builtin statusline to indicate the status of the GitLab Duo Code Suggestions integration
+    --     },
+    --   },
+    -- }
 }

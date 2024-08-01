@@ -1,5 +1,5 @@
--- keymappings
-require('key_mappings')
+-- Setting up leader key
+vim.g.mapleader = ' '
 
 -- Plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -16,36 +16,28 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
--- Default editor settings
-require('editor')
+-- keymappings
+require('prose.key_mappings')
 
--- Completion
-vim.g.coc_global_extensions={
-    'coc-erlang_ls',
-    'coc-tsserver',
-    'coc-snippets',
-    'coc-pyright',
-    'coc-json',
-    'coc-html',
-    'coc-css',
-    'coc-rust-analyzer',
-    'coc-go',
-    'coc-lua',
-    'coc-sh',
-    'coc-markdownlint',
-    'coc-pydocstring',
-    'coc-sqlfluff',
-    'coc-svelte',
-    'coc-yaml',
-    'coc-toml',
-    'coc-docker',
-    'coc-sql',
-    'coc-angular',
-    'coc-xml',
-    'coc-csharp-ls',
-}
+-- Default editor settings
+require('prose.editor')
+
 vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
+-- Completion
+-- vim.g.coc_global_extensions={
+--     'coc-erlang_ls',
+--     'coc-tsserver',
+--     'coc-snippets',
+--     'coc-pyright',
+--     'coc-json',
+--     'coc-html',
+--     'coc-css',
+--     'coc-rust-analyzer',
+--     'coc-go',
+--     'coc-lua',
+-- }
+
 vim.cmd([[
     " Add search to quickfix list
     function! s:build_quickfix_list(lines)
@@ -67,23 +59,23 @@ vim.cmd([[
       \gV:call setreg('"', old_reg, old_regtype)<CR>
 
     " Use K to show documentation in preview window.
-    nnoremap <silent> K :call <SID>show_documentation()<CR>
-    function! s:show_documentation()
-      if (index(['vim','help'], &filetype) >= 0)
-        execute 'h '.expand('<cword>')
-      else
-        call CocAction('doHover')
-      endif
-    endfunction
+"    nnoremap <silent> K :call <SID>show_documentation()<CR>
+"    function! s:show_documentation()
+"      if (index(['vim','help'], &filetype) >= 0)
+"        execute 'h '.expand('<cword>')
+"      else
+"        call CocAction('doHover')
+"      endif
+"    endfunction
 
 
     """Rust
-    autocmd FileType rust nnoremap <leader>t :Start -wait=always cargo test<CR>
+    autocmd FileType rust nnoremap <leader>t :Start -wait=always cargo nextest run<CR>
 
     """Python
     autocmd FileType python setlocal colorcolumn=80
     autocmd BufNewFile,BufRead *.jinja,*.jinja2 set ft=jinja
-    autocmd BufWritePre *.py,*.rs,*lua :%s/\s\+$//e
+    autocmd BufWritePre *.py,*.rs,*lua,*rst,*.tsx :%s/\s\+$//e
     autocmd FileType python nnoremap <leader>t :Start -wait=always pytest -svv %<CR>
     autocmd FileType python nnoremap <leader>y "tyiw:Start -wait=always pytest -svv % -k <C-R>t<CR>
 
@@ -92,10 +84,12 @@ vim.cmd([[
 
     " Make <CR> auto-select the first completion item and notify coc.nvim to
     " format on enter, <cr> could be remapped by other vim plugin
-    inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
-                                  \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"    inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
+"                                  \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 ]])
---Comment plugin
-vim.g.vim_json_conceal=0
-require('Comment').setup()
+
+local function printStrings(str1, str2)
+    print(str1);
+    print(str2);
+end

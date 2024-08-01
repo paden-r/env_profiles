@@ -30,7 +30,6 @@ vim.cmd "set nowrap"
 vim.cmd "set foldexpr=nvim_treesitter#foldexpr()"
 vim.cmd "set nofoldenable"        -- Disable folding at startup.
 vim.cmd "set clipboard+=unnamedplus"
-
 vim.cmd 'colorscheme monokai'
 
 vim.o.listchars="tab:→ ,space:·,nbsp:␣,eol:¶"
