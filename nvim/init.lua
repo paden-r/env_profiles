@@ -22,6 +22,8 @@ require('prose.key_mappings')
 -- Default editor settings
 require('prose.editor')
 
+require('blame')
+
 vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
 -- Completion
