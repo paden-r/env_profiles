@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/prose/.config/nvim/lua'
+let g:netrw_dirhist_4='/Users/prose/.config/nvim'
+let g:netrw_dirhist_3='/Users/prose/code/HqProxyRust'
+let g:netrw_dirhist_2='/Users/prose/code/review-buddy/src'
+let g:netrw_dirhist_1='/Users/prose/code/review-buddy'

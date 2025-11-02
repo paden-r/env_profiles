@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+exec node "/Users/prose/.local/share/nvim/mason/packages/node-debug2-adapter/out/src/nodeDebug.js" "$@"

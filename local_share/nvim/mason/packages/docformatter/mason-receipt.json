@@ -1,0 +1,1 @@
+{"metrics":{"start_time":1761964109574,"completion_time":1761964116323},"links":{"share":{},"opt":{},"bin":{"docformatter":"venv\/bin\/docformatter"}},"secondary_sources":[],"schema_version":"1.1","name":"docformatter","primary_source":{"type":"registry+v1","id":"pkg:pypi\/docformatter@1.7.7"}}

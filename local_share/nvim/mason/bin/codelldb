@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+exec "/Users/prose/.local/share/nvim/mason/packages/codelldb/extension/adapter/codelldb" "$@"

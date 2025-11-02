@@ -1,0 +1,1 @@
+{"metrics":{"start_time":1761964112937,"completion_time":1761964150812},"links":{"share":{"mason-schemas\/lsp\/jinja-lsp.json":"mason-schemas\/lsp.json"},"opt":{},"bin":{"jinja-lsp":"bin\/jinja-lsp"}},"secondary_sources":[],"schema_version":"1.1","name":"jinja-lsp","primary_source":{"type":"registry+v1","id":"pkg:cargo\/jinja-lsp@0.1.89"}}

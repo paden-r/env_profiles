@@ -1,0 +1,1 @@
+{"name":"checkmake","links":{"bin":{"checkmake":"checkmake-0.2.2.darwin.amd64"},"opt":{},"share":{"man\/man1\/checkmake.1":"man1\/checkmake.1"}},"metrics":{"start_time":1708303873166,"completion_time":1708303874518},"secondary_sources":[],"primary_source":{"id":"pkg:github\/mrtazz\/checkmake@0.2.2","type":"registry+v1"},"schema_version":"1.1"}

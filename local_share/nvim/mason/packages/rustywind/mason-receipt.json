@@ -1,0 +1,1 @@
+{"secondary_sources":[],"schema_version":"1.1","primary_source":{"type":"registry+v1","id":"pkg:npm\/rustywind@0.23.1"},"name":"rustywind","links":{"bin":{"rustywind":"node_modules\/.bin\/rustywind"},"share":{},"opt":{}},"metrics":{"start_time":1739287929394,"completion_time":1739287998398}}
