@@ -1,26 +1,27 @@
 require("neodev").setup({})
 
-local on_attach = function(client, bufnr)
-  if client.name == 'ruff_lsp' then
-    -- Disable hover in favor of Pyright
-    client.server_capabilities.hoverProvider = false
-  end
-end
-
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 lspconfig.lua_ls.setup {}
-lspconfig.pyright.setup {}
-lspconfig.tsserver.setup {}
+lspconfig.pyright.setup { settings = { python = { analysis = { autoImport = false } } } }
 lspconfig.tailwindcss.setup {}
 lspconfig.csharp_ls.setup {}
+lspconfig.sqls.setup {
+    on_attach = function(client, bufnr)
+        require('sqls').on_attach(client, bufnr)
+        client.server_capabilities.hoverProvider = false
+    end
+}
 
-lspconfig.ruff_lsp.setup {
-  on_attach = on_attach,
+lspconfig.ruff.setup {
+    on_attach = function(client, bufnr)
+        client.server_capabilities.hoverProvider = false
+    end
+    ,
     init_options = {
         settings = {
             format = {
-                args = {"--preview"}
+                args = { "--preview" }
             },
             lint = {
                 args = { "--preview" },

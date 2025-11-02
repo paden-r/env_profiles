@@ -51,6 +51,8 @@ alias ls="exa"
 alias find="fd"
 alias zj="zellij --layout /Users/prose/zellij-layouts/default.kdl --config ~/.config/zellij/config.kdl"
 alias zv="zellij --layout /Users/prose/zellij-layouts/vertical.kdl --config ~/.config/zellij/config.kdl"
+alias build_venv_dev="python3.13 -m venv .venv --system-site-packages --upgrade-deps; activate; uv pip install -r requirements_dev.txt"
+alias build_venv="python3.13 -m venv .venv --system-site-packages --upgrade-deps; activate; uv pip install -r requirements.txt"
 alias grep="rg"
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"

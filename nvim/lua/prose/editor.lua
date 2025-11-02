@@ -34,8 +34,8 @@ vim.cmd 'colorscheme monokai'
 
 vim.o.listchars="tab:→ ,space:·,nbsp:␣,eol:¶"
 
-vim.api.nvim_create_autocmd({"BufEnter"}, {
-    callback = function()
-        vim.cmd "set foldmethod=expr"
-    end
-})
+-- vim.api.nvim_create_autocmd({"BufEnter"}, {
+--     callback = function()
+--         vim.cmd "set foldmethod=expr"
+--     end
+-- })
